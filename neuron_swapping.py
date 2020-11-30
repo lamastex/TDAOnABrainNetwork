@@ -36,11 +36,7 @@ for M_a in m_type:
         D_ = scipy.spatial.distance.cdist(L_a, L_b, 'euclidean')
 ###########################################################################################
         # Bins
-        lista = np.arange(1, D_.max(), 100)
-        alpha = [0]
-        sub_list = np.array(np.ones(len(lista) - 1))
-        np.concatenate([alpha, sub_list])
-        bins = lista - np.concatenate([alpha, sub_list])
+        bins = np.arange(1, D_.max(), 100) - np.concatenate([[0], np.array(np.ones(len(np.arange(1, D_.max(), 100)) - 1))])
 ###########################################################################################
         # Matrix of distance bins
         B_ = np.digitize(D_, bins)
