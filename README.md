@@ -19,8 +19,3 @@ Finally computes the simplicial counts for the General-Biol model
 
 # Original (Bio-M)
 Simply reads in the original matrix and produces the m_type connection csv files.
-
-# reconstruct_original (Bio-M)
-Reconstructs the csv files from Original in a similar manner to reconstructed_file.
-Also counts the simplices in the respective dimensions.
-
