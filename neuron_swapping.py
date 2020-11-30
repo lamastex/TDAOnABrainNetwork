@@ -10,7 +10,6 @@ import random
 
 # Read in H5 file
 mc0_file = h5py.File('../../pathway_average_files/cons_locs_pathways_mc0_Column.h5', 'r')
-
 ###########################################################################################
 #                                 Neuron Type Locations                                   #
 ###########################################################################################
@@ -39,8 +38,7 @@ for M_a in m_type:
         bins = np.arange(1, D_.max(), 100) - np.concatenate([[0], np.array(np.ones(len(np.arange(1, D_.max(), 100)) - 1))])
 ###########################################################################################
         # Matrix of distance bins
-        B_ = np.digitize(D_, bins)
-        C_ = np.array(pd.DataFrame((B_)))
+        C_ = np.array(np.digitize(D_, bins))
 ###########################################################################################
         # Bin groups in matrix
         groups = np.array(range(len(bins))) + 1
@@ -59,5 +57,3 @@ for M_a in m_type:
         ab = pd.DataFrame(a)
         ab.to_csv("../reconstruction/" + str(M_a) + str(M_b) + ".csv", header = False, index = False)
 ###########################################################################################
-# script to convert all h5 files into csv files after distance dependent shuffling. 
-# This creates csv files according to the general-bio model
