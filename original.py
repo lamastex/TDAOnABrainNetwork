@@ -27,6 +27,3 @@ for i in m_type:
     for j in m_type:
         connect4 = pd.DataFrame(np.matrix(connection[i][j]['cMat']))
         connect4.to_csv("../reconstruction/" + str(i) + str(j) + ".csv", header = False, index = False)
-                                          
-
-# script to convert all matrices from h5 file to csv files located in reconstruction
