@@ -108,15 +108,3 @@ plt.show()
 plt.savefig('Inhibitory_graph_MC6.png')
 
 #####################################################################
-# not sure where these are from
-# Excitatory Connections MC6
-# 17180 3369861 27585122 19208390 1611590 19364 28
-
-# Inhibitory MC6
-# 20641 4080920 32769039 22335013 1845051 22065 36
-
-# Excitatory Connections MC0
-# 20659 4018026 31934382 21656672 1783787 21447 40
- 
-# Inhibitory Connections MC0
-# 13866 1396288 7778563 5320299 626552 15378 72
