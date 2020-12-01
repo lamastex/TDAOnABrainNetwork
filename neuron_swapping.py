@@ -1,3 +1,21 @@
+'''
+Script takes the h5 files which can be obtained from BBP website under downloads.
+The h5 files contain information about the neurons, locations, connectivity etc.
+3D neuronal locations are read in for pre- and post- synaptic neurons
+Their Euclidean distances are computed.
+These are then binned according to their pairwise distances
+Original connection matrix is read in
+These values are then shuffled according to which bin they are in.
+        # Bins
+        # Matrix of distance bins
+
+
+        # distances between each neuron pathway group
+                # Bin groups in matrix
+        # Actual connections matrix
+        # Shuffle of each matrix
+
+'''
 import numpy as np
 import h5py
 import pandas as pd
@@ -7,11 +25,8 @@ import itertools
 from scipy.spatial import distance
 import scipy
 import random
-
-# Read in H5 file
-mc0_file = h5py.File('../../pathway_average_files/cons_locs_pathways_mc0_Column.h5', 'r')
 ###########################################################################################
-#                                 Neuron Type Locations                                   #
+mc0_file = h5py.File('../../pathway_average_files/cons_locs_pathways_mc0_Column.h5', 'r')
 ###########################################################################################
 populations = mc0_file.get('populations')
 ###########################################################################################
@@ -31,23 +46,17 @@ for M_a in m_type:
         L_a = pd.DataFrame(np.matrix(populations[M_a]['locations']), columns = ['x', 'y', 'z'])
         L_b = pd.DataFrame(np.matrix(populations[M_b]['locations']), columns = ['x', 'y', 'z'])
 ###########################################################################################        
-        # distances between each neuron pathway group
         D_ = scipy.spatial.distance.cdist(L_a, L_b, 'euclidean')
 ###########################################################################################
-        # Bins
         bins = np.arange(1, D_.max(), 100) - np.concatenate([[0], np.array(np.ones(len(np.arange(1, D_.max(), 100)) - 1))])
 ###########################################################################################
-        # Matrix of distance bins
         C_ = np.array(np.digitize(D_, bins))
 ###########################################################################################
-        # Bin groups in matrix
         groups = np.array(range(len(bins))) + 1
 ###########################################################################################
-        # Actual connections matrix
         connections = mc0_file.get('connectivity')
         a = np.array(connections[M_a][M_b]['cMat'])
 ###########################################################################################
-        # Shuffle of each matrix
         for aw in groups:
             b = a[C_ == aw]
             np.random.shuffle(b)
