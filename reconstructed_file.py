@@ -1,3 +1,12 @@
+'''
+Script takes csv files that have been stored in reconstruction folder.
+For each m_type computes the number of neurons(size) in each of the m_types.
+Takes sum of each m_type so we create a matrix of zeroes of the full size.
+Loops through and rebuilds matrix from all sub-matrices.
+Finally computes the simplicial counts for the General-Biol model
+
+# Code for computing m_TYPE_SIZE
+'''
 import numpy as np
 import h5py
 import pandas as pd
@@ -23,7 +32,6 @@ m_type = [
         'L6_TPC_L1', 'L6_TPC_L4', 'L6_UTPC'
         ]
 ###############################################################################
-# Code for computing m_TYPE_SIZE
 for f in m_type:
     filename = f + f + ".csv"
     a = pd.read_csv(os.path.join(directory, filename), header = None, index_col = False)
