@@ -1,11 +1,15 @@
-import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
+'''
+Values were obtained from the control files on BBP website and Euler and Betti numbers
+were computed using Flasger package.
 
 # 42 variants
 # six sets
 # seven varying instantiations of each
 # so this is the individual pathways
+'''
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
 #########################################################################################
 #                                      Graph B                                          #
 #########################################################################################
@@ -33,6 +37,5 @@ plt.legend()
 plt.show()
 
 #########################################################################################
-# These are based on the revised cloud model version, so give a different result to the original figure (fig5b)
 
 
