@@ -1,6 +1,10 @@
 # working-manuscript-TopologicalDataAnalysisOnABrainNetwork
 working-manuscript-TopologicalDataAnalysisOnABrainNetwork - for Kieran Barber
 
+# Flagser
+This can be obtained from here: https://github.com/luetge/flagser
+Alternatively, it can be cloned from the command line.
+
 # General_biol
 Requirements to run files:
 pip install h5py, pip3 install pyflagser, cons_locs_pathways_mc6_Column 
