@@ -1,17 +1,14 @@
 '''
-Simply reads in the original matrix and produces the m_type connection csv files.
-# Read in H5 file
-# # M_types
-
+Reads in h5 file, specifically the connectivity portion, and rewrites the matrices
+to CSV files with respect to their pre amd post-synaptic morphological types.
 '''
 import numpy as np
 import h5py
 import pandas as pd
 #############################################################################################
-mc0_file = h5py.File('../../pathway_average_files/cons_locs_pathways_mc0_Column.h5', 'r')
+mc_file = h5py.File('../../pathway_average_files/cons_locs_pathways_mc0_Column.h5', 'r')
 #############################################################################################
-populations = mc0_file.get('populations')
-connection = mc0_file.get('connectivity')
+connection = mc_file.get('connectivity')
 
 m_type = [
     'L1_DAC', 'L1_DLAC', 'L1_HAC', 'L1_NGC-DA', 'L1_NGC-SA', 'L1_SLAC', 'L23_BP', 'L23_BTC', 
