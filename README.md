@@ -4,7 +4,7 @@ working-manuscript-TopologicalDataAnalysisOnABrainNetwork - for Kieran Barber
 # General_biol
 Requirements to run files:
 pip install h5py, pip3 install pyflagser, cons_locs_pathways_mc6_Column 
-which can be obtained from BBP website downloads
+which can be obtained from BBP website downloads: https://bbp.epfl.ch/nmc-portal/downloads
 
 Sample run:
 python general_biol_swap.py
