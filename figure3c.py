@@ -1,5 +1,5 @@
 '''
-file reproduces the mean maximal dimension of all neurons in each layer of the Bio-M model.
+Script reproduces the mean maximal dimension of all neurons in each layer of the Bio-M model.
 Connectivity matrix is read in from the downloadable files from BBP website.
 The number and dimension of simplices to which each neuron belongs to are detailed in a_.
 
