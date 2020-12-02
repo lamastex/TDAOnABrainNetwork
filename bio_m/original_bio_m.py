@@ -1,6 +1,8 @@
 '''
 Reads in h5 file, specifically the connectivity portion, and rewrites the matrices
 to CSV files with respect to their pre amd post-synaptic morphological types.
+
+Note that we save the CSV files into a directory one level up named 'reconstruction'
 '''
 import numpy as np
 import h5py
