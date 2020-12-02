@@ -19,7 +19,7 @@ we shuffle the connections according to which bin the entries are in. Returned i
 CSV files which contain the shuffled sub matrices which then need to be put back together
 to form the shuffled connectome.
 
-NOTE: run using 'python3 general_biol_swap.py'
+NOTE: run using 'python general_biol_swap.py'
 '''
 import numpy as np
 import h5py
