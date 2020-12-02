@@ -2,13 +2,16 @@
 We read in the original h5 files, specifically the connectivity matrices. This is done for
 all instantiations of the Neocortical Model (Bio0-5). From here, we concatenate all 
 the submatrices into the large 31,346 x 31,346 matrix. 
+
 Then the number of simplices to which each neuron belongs to is the computed through
 simplex counts, and listed in its entirety in a_Full. The column of interest, however,
 is the column including the number of 3D simplices in which each neuron belongs to. This
 is labelled as L_.
+
 Further to finding the number of 3D simplices belonging to each neuron, we want to see
 this for both inhibitory and excitatory neurons. This we successfully split out in 
 V_. 
+
 To finally get the data in the form required, we take counts of the number of simplices
 each neuron belongs to and list these as such under L_inhib and L_excit. Once we have these
 counts, we can then group together these counts into bins.
