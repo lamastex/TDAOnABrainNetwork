@@ -7,13 +7,6 @@ Simply reads in the original matrix and produces the m_type connection csv files
 import numpy as np
 import h5py
 import pandas as pd
-import collections
-from mpl_toolkits.mplot3d import Axes3D
-import itertools
-from scipy.spatial import distance
-import scipy
-import random
-import os
 #############################################################################################
 mc0_file = h5py.File('../../pathway_average_files/cons_locs_pathways_mc0_Column.h5', 'r')
 #############################################################################################
