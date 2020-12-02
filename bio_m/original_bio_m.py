@@ -2,7 +2,8 @@
 Reads in h5 file, specifically the connectivity portion, and rewrites the matrices
 to CSV files with respect to their pre amd post-synaptic morphological types.
 
-Note that we save the CSV files into a directory one level up named 'reconstruction'
+NOTE: we save the CSV files into a directory one level up named 'reconstruction'
+NOTE: can only be run using 'python original_bio_m.py'
 '''
 import numpy as np
 import h5py
