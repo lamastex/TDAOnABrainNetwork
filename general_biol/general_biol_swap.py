@@ -1,34 +1,35 @@
 '''
-Script takes the h5 files which can be obtained from BBP website under downloads.
-The h5 files contain information about the neurons, locations, connectivity etc.
-3D neuronal locations are read in for pre- and post- synaptic neurons
-Their Euclidean distances are computed.
-These are then binned according to their pairwise distances
-Original connection matrix is read in
-These values are then shuffled according to which bin they are in.
-        # Bins
-        # Matrix of distance bins
+Script takes the h5 files which contains information about the neurons and their locations, 
+connectivity etc. We specifically take the file that is the average of all the instances.
 
+TASK
+What this script ultimately does is to rearrange connection instances in the whole matrix
+according to distance dependence which is done through each sub matrix.
 
-        # distances between each neuron pathway group
-                # Bin groups in matrix
-        # Actual connections matrix
-        # Shuffle of each matrix
+HOW
+To achieve this, we first read in the relevant file (mc_file) and move into the correct 
+directory. We make notes of all the morphological types. We want to create two matrices 
+(L_a, L_b) consisting of neuron locations for both the pre and post synaptic neuron types. 
 
+Next, we want to create a matrix which holds all distance values (D_) for the relevant neurons.
+These values then get binned (C_) according to their distances from each other.
+
+With this we then want to have ready the original connection matrix (a) and for each sub matrix
+we shuffle the connections according to which bin the entries are in. Returned is a list of
+CSV files which contain the shuffled sub matrices which then need to be put back together
+to form the shuffled connectome.
 '''
 import numpy as np
 import h5py
 import pandas as pd
 import collections
-from mpl_toolkits.mplot3d import Axes3D
 import itertools
 from scipy.spatial import distance
 import scipy
 import random
 ###########################################################################################
-mc0_file = h5py.File('../../pathway_average_files/cons_locs_pathways_mc0_Column.h5', 'r')
-###########################################################################################
-populations = mc0_file.get('populations')
+mc_file = h5py.File('../../pathway_average_files/cons_locs_pathways_mc6_Column.h5', 'r')
+populations = mc_file.get('populations')
 ###########################################################################################
 m_type = [
     'L1_DAC', 'L1_DLAC', 'L1_HAC', 'L1_NGC-DA', 'L1_NGC-SA', 'L1_SLAC', 'L23_BP', 'L23_BTC', 
