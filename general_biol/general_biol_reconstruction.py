@@ -5,17 +5,11 @@ Takes sum of each m_type so we create a matrix of zeroes of the full size.
 Loops through and rebuilds matrix from all sub-matrices.
 Finally computes the simplicial counts for the General-Biol model
 
-# Code for computing m_TYPE_SIZE
+NOTE: run using 'python3 general_biol_reconstruction.py'
 '''
 import numpy as np
-import h5py
 import pandas as pd
-import collections
-from mpl_toolkits.mplot3d import Axes3D
 import itertools
-from scipy.spatial import distance
-import scipy
-import random
 import glob
 import os
 import pyflagser
