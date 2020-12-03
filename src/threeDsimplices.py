@@ -15,6 +15,8 @@ V_.
 To finally get the data in the form required, we take counts of the number of simplices
 each neuron belongs to and list these as such under L_inhib and L_excit. Once we have these
 counts, we can then group together these counts into bins.
+
+NOTE: run using 'python threeDsimplices.py'
 '''
 ####################################################################################
 import pandas as pd
