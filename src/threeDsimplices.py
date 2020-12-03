@@ -24,7 +24,7 @@ from pyflagsercontain import flagser_count
 ####################################################################################
 numbers = np.arange(0, 6, 1)
 for z in numbers:
-    mc0 = h5py.File('../../pathway_average_files/cons_locs_pathways_mc' + str(z) + '_Column.h5', 'r')
+    mc0 = h5py.File('../data/cons_locs_pathways_mc' + str(z) + '_Column.h5', 'r')
     connectivity = mc0.get('connectivity')
 ####################################################################################
     whole_matrix = np.vstack([np.hstack([connectivity[a][b]['cMat'] for b in connectivity]) for a in connectivity])
@@ -77,12 +77,12 @@ for z in numbers:
     L_inhib.columns = ['neuron', 'simplex']
     L_inhib = pd.DataFrame(L_inhib.groupby(pd.cut(L_inhib.simplex, bins = np.linspace(0, 40000, 20)))['neuron'].sum().fillna(0))
     L_inhib.columns = ['neurons']
-    L_inhib.to_csv("i" + str(z) + ".csv")
+    L_inhib.to_csv("../output/i" + str(z) + ".csv")
 ###################################################################################
     L_excit = pd.DataFrame(excitatory.value_counts())
     L_excit['simplex'] = L_excit.index
     L_excit.columns = ['neuron','simplex']
     L_excit = pd.DataFrame(L_excit.groupby(pd.cut(L_excit.simplex, bins = np.linspace(0, 40000, 21)))['neuron'].sum().fillna(0))
     L_excit.columns = ['neurons']
-    L_excit.to_csv("e" + str(z) + ".csv")
+    L_excit.to_csv("../output/e" + str(z) + ".csv")
 ###################################################################################
