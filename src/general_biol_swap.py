@@ -7,7 +7,7 @@ What this script ultimately does is to rearrange connection instances in the who
 according to distance dependence which is done through each sub matrix.
 
 HOW
-To achieve this, we first read in the relevant file (mc_file) and move into the correct 
+To achieve this, we first read in the relevant file (mc_file) and move into the locations 
 directory. We make notes of all the morphological types. We want to create two matrices 
 (L_a, L_b) consisting of neuron locations for both the pre and post synaptic neuron types. 
 
@@ -30,7 +30,7 @@ from scipy.spatial import distance
 import scipy
 import random
 ###########################################################################################
-mc_file = h5py.File('../../pathway_average_files/cons_locs_pathways_mc6_Column.h5', 'r')
+mc_file = h5py.File('../data/cons_locs_pathways_mc6_Column.h5', 'r')
 populations = mc_file.get('populations')
 ###########################################################################################
 m_type = [
@@ -67,5 +67,5 @@ for M_a in m_type:
             for i, j, v in zip(iz, jz, b):
                 a[i, j] = v
         ab = pd.DataFrame(a)
-        ab.to_csv("../reconstruction/" + str(M_a) + str(M_b) + ".csv", header = False, index = False)
+        ab.to_csv("../output/reconstruction/" + str(M_a) + str(M_b) + ".csv", header = False, index = False)
 ###########################################################################################
