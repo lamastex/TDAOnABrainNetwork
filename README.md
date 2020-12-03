@@ -36,7 +36,7 @@ do the following:
 ./flagser-count MC6.flag --out file.h5
 This will return the same as above.
 
-# Inhibitory and Excitatory neurons
+# Inhibitory and Excitatory neurons in layers (Figure2.py)
 For the second and third graphs in 'Figure2.py', we need the relevant 
 groups for inhibitory and excitatory neurons and for each layer.
 
@@ -51,41 +51,46 @@ excit_L4: 'L4_PC,L4_SP,L4_SS'
 excit_L5: 'L5_STPC,L5_TTPC1,L5_TTPC2,L5_UTPC'
 excit_L6: 'L6_BPC,L6_IPC,L6_TPC_L1,L6_TPC_L4,L6_UTPC'
 
+Again, to run, first convert relevant files to .flag:
+./tools/h5toflagser ../data/((h5 file) --groups "L1_DAC,L1_DLAC,L1_HAC,L1_NGC-DA,L1_NGC-SA,L1_SLAC" MC6_L1.flag
+Then we can run:
+./flagser-count MC6_L1.flag --out file.h5
+This returns something like the following:
+[339, 848, 92, 1]
 
+# Inhibitory and Excitatory neurons (Figure3.py A graphs)
+This is the same as above but for the following groups:
 
+inhib:'L1_DAC,L1_DLAC,L1_HAC,L1_NGC-DA,L1_NGC-SA,L1_SLAC,L23_BTC,L23_DBC,
+    L23_LBC,L23_MC,L23_NBC,L23_NGC,L23_SBC,L4_BTC,L4_DBC,L4_LBC,
+    L4_MC,L4_NBC,L4_NGC,L4_SBC,L5_BTC,L5_DBC,L5_LBC,L5_MC,L5_NBC,
+    L5_NGC,L6_BTC,L6_MC,L6_LBC'
 
+excit: 'L23_PC,L4_PC,L4_SP,L4_SS,L5_STPC,L5_TTPC1,L5_TTPC2,L5_UTPC,L6_BPC,
+    L6_IPC,L6_TPC_L1,L6_TPC_L4,L6_UTPC'
 
-Requirements to run files:
-pip install h5py, pip3 install pyflagser, cons_locs_pathways_mc6_Column 
-which can be obtained from BBP website downloads: https://bbp.epfl.ch/nmc-portal/downloads
+# 3D simplices - threeDsimplices and Figure3b
+threedsimplices.py runs in conjunction with figure 3b. We first run:
+python threesimplices.py
+This will produce csv files in output. Then running:
+python3 Figure3.py
+These values will be read in and produce a graph.
 
-Sample run:
-python general_biol_swap.py
-OUTPUT: csv files stored in directory ../reconstruction
-
-python3 general_biol_reconstruction.py
-OUTPUT: npy file saved for future use and simplicial counts
-[31346, 7822274, 35959272, 5578631, 47415, 31]
-
-# Original (Bio-M)
-Requirements to run as above (General_biol)
-
-sample run: as above
-
-# MMD_neuron
-Requirements to run:
-h5py, pyflagsercontain
-
-sample run:
+# Mean maximal Dimension - MMD_neuron
+To run this file:
 python MMD_neuron.py
-OUTPUT: 3.3392330383480826
+Output is something similar to:
+3.3392330383480826
 4.5146315509444
 4.862046771079168
 4.9274484113986246
 5.017607294450558
+These values are included in Figure3.py graph 3c.
 
-# threeDsimplices
-Requirements to run as above
+# Figure3
+If all the above has been run, this should be run with:
+python3 Figure3.py
 
-sample run: as above (MMD_neuron)
-OUTPUT: csv files to be used in 'Figure3.py'
+# Figure5
+Can be run with:
+python3 Figure5.py
