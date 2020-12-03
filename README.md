@@ -89,7 +89,7 @@ Output is something similar to:
 >4.9274484113986246,
 >5.017607294450558
 
-These values are included in Figure3.py graph 3c.
+These values are included in `Figure3.py` graph 3c.
 
 ## Figure3
 If all the above has been run, this should be run with: `python3 Figure3.py`
