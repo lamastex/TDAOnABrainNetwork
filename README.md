@@ -10,47 +10,31 @@ To run the code within, you will need the following:
 
 ## General_biol
 From https://bbp.epfl.ch/nmc-portal/downloads, we can download the average file
-and store this in the data directory. Then run:
-
-`python general_biol_swap.py` (~10 mins runtime)
+and store this in the data directory. Then run: `python general_biol_swap.py` (~10 mins runtime)
 
 This saves csv files in the reconstruction folder to be used in the next step.
 
-Once completed, we now run:
+Once completed, we now run:`python3 general_biol_reconstruction.py` (~15 mins)
 
-`python3 general_biol_reconstruction.py` (~15 mins)
-
-This returns output similar to the following:
-
-31346, 7648079, 34103325, 5158826, 43523, 30, 0
+This returns output similar to the following: 31346, 7648079, 34103325, 5158826, 43523, 30, 0
 
 ## Bio-M
 ### Using Python
-Making sure the reconstruction folder is empty, we can run the following:
-
-`python original.py` (~5 mins)
+Making sure the reconstruction folder is empty, we can run the following: `python original.py` (~5 mins)
 
 This does exactly as `general_biol_swap.py` apart from the swapping
 
-Rerun the following:
+Rerun the following: `python3 general_biol_reconstruction.py` (~15 mins)
 
-`python3 general_biol_reconstruction.py` (~15 mins)
-
-This returns output similar to the following:
-
-31346, 7822274, 76361228, 64064185, 7274386, 156404, 896
+This returns output similar to the following: 31346, 7822274, 76361228, 64064185, 7274386, 156404, 896
 
 ### Using Flagser
 Alternatively, if we have the flagser package saved in `src` directory, we can 
 do the following:
 
-1. Convert the h5 files to .flag files:
+1. Convert the h5 files to .flag files: `./tools/h5toflagser ../data/(h5 file) MC6.flag`
 
-`./tools/h5toflagser ../data/(h5 file) MC6.flag`
-
-2. Run the following:
-
-`./flagser-count MC6.flag --out file.h5`
+2. Run the following: `./flagser-count MC6.flag --out file.h5`
 
 This will return the same as above.
 
@@ -59,7 +43,6 @@ For the second and third graphs in `Figure2.py`, we need the relevant
 groups for inhibitory and excitatory neurons and for each layer.
 
 inhib_L1: 'L1_DAC,L1_DLAC,L1_HAC,L1_NGC-DA,L1_NGC-SA,L1_SLAC'
-
 inhib_L23:'L23_BTC,L23_DBC,L23_LBC,L23_MC,L23_NBC,L23_NGC,L23_SBC'
 
 inhib_L4: 'L4_BTC,L4_DBC,L4_LBC,L4_MC,L4_NBC,L4_NGC,L4_SBC'
@@ -76,17 +59,11 @@ excit_L5: 'L5_STPC,L5_TTPC1,L5_TTPC2,L5_UTPC'
 
 excit_L6: 'L6_BPC,L6_IPC,L6_TPC_L1,L6_TPC_L4,L6_UTPC'
 
-Again, to run, first convert relevant files to .flag:
+Again, to run, first convert relevant files to .flag: `./tools/h5toflagser ../data/((h5 file) --groups "L1_DAC,L1_DLAC,L1_HAC,L1_NGC-DA,L1_NGC-SA,L1_SLAC" MC6_L1.flag`
 
-`./tools/h5toflagser ../data/((h5 file) --groups "L1_DAC,L1_DLAC,L1_HAC,L1_NGC-DA,L1_NGC-SA,L1_SLAC" MC6_L1.flag`
+Then we can run: `./flagser-count MC6_L1.flag --out file.h5`
 
-Then we can run:
-
-`./flagser-count MC6_L1.flag --out file.h5`
-
-This returns something like the following:
-
-339, 848, 92, 1
+This returns something like the following: 339, 848, 92, 1
 
 ## Inhibitory and Excitatory neurons (Figure3.py A graphs)
 This is the same as above but for the following groups:
@@ -100,21 +77,15 @@ excit: 'L23_PC,L4_PC,L4_SP,L4_SS,L5_STPC,L5_TTPC1,L5_TTPC2,L5_UTPC,L6_BPC,
     L6_IPC,L6_TPC_L1,L6_TPC_L4,L6_UTPC'
 
 ## 3D simplices - threeDsimplices and Figure3b
-threedsimplices.py runs in conjunction with figure 3b. We first run:
+threedsimplices.py runs in conjunction with figure 3b. We first run: `python threesimplices.py`
 
-`python threesimplices.py`
-
-This will produce csv files in output. Then running:
-
-`python3 Figure3.py`
+This will produce csv files in output. Then running: `python3 Figure3.py`
 
 These values will be read in and produce a graph.
 
 ## Mean maximal Dimension - MMD_neuron
 
-To run this file:
-
-`python MMD_neuron.py`
+To run this file: `python MMD_neuron.py`
 
 Output is something similar to:
 
@@ -127,11 +98,7 @@ Output is something similar to:
 These values are included in Figure3.py graph 3c.
 
 ## Figure3
-If all the above has been run, this should be run with:
-
-`python3 Figure3.py`
+If all the above has been run, this should be run with: `python3 Figure3.py`
 
 ## Figure5
-Can be run with:
-
-`python3 Figure5.py`
+Can be run with: `python3 Figure5.py`
