@@ -14,7 +14,7 @@ import glob
 import os
 import pyflagser
 ###############################################################################
-directory = "../reconstruction/"    
+directory = "../output/reconstruction/"    
 m_type = [
         'L1_DAC', 'L1_DLAC', 'L1_HAC', 'L1_NGC-DA', 'L1_NGC-SA', 'L1_SLAC', 'L23_BP', 
         'L23_BTC', 'L23_ChC', 'L23_DBC', 'L23_LBC', 'L23_MC', 'L23_NBC', 'L23_NGC', 
