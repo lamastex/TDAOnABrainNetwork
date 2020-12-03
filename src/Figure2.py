@@ -7,13 +7,13 @@ running the scripts in the general_biol folder.
 
 The values for the excitatory and inhibitory simplicial counts can be obtained
 by using the flagser package.
+
+run using: 'python3 Figure2.py'
 '''
 import matplotlib.pyplot as plt
-
 #####################################################################
 #                         Simplicial Counts                         #
 #####################################################################
-
 x = [0, 1, 2, 3, 4, 5, 6] # dimensions
 plt.plot(x, [31346, 7822274, 76361228, 64064185, 7274386, 156404, 896], label = "Bio-M")
 plt.plot(x, [31346, 7648079, 34103325, 5158826, 43523, 30, 0], label = "General_Bio")
@@ -22,8 +22,6 @@ plt.ylabel(ylabel = "Number of Simplices")
 plt.title(label = "Directed Simplex count for each model")
 plt.legend()
 plt.show()
-plt.savefig('Bio_M.png')
-
 #####################################################################
 #                       Inhibitory and excitatory                   #
 #####################################################################
@@ -35,7 +33,6 @@ plt.plot(x, [6643, 677911, 3357760, 1577303, 101384, 1053, 3], label = "Excitato
 plt.title(label = "Average Connections MC6")
 plt.legend()
 plt.show()
-plt.savefig('Excitatory_graph_MC6.png')
 
 plt.plot(x, [339, 848, 92, 1, 0, 0, 0], label = "Inhibitory_MC6_L1")
 plt.plot(x, [1648, 21624, 19393, 2070, 26, 0, 0], label = "Inhibitory_MC6_L23")
@@ -45,6 +42,4 @@ plt.plot(x, [9261, 1147117, 7641907, 5769164, 735968, 20030, 184], label = "Inhi
 plt.title(label = "Average Connections MC6")
 plt.legend()
 plt.show()
-plt.savefig('Inhibitory_graph_MC6.png')
-
 #####################################################################
