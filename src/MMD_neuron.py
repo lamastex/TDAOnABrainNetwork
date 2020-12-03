@@ -18,6 +18,9 @@ columns 'n' and 'l_type' but not before we grouped all neurons into their respec
 
 Since we want to find the mean maximal dimension for all layers, we loop through each layer
 to obtain our results and have this printed out at the bottom
+
+NOTE:
+run using 'python MMD_neuron.py'
 '''
 import h5py
 import pandas as pd
