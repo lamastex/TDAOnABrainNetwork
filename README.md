@@ -8,7 +8,7 @@ pyflagser: https://pypi.org/project/pyflagser/
 pyflagsercontain: pip install pyflagsercontain
 cons_loc_pathway files: https://bbp.epfl.ch/nmc-portal/downloads (average files)
 
-# General_biol
+## General_biol
 With the average files (h5) contained in the data directory, you can run:
 python general_biol_swap.py (~10 mins runtime)
 This saves csv files in the reconstruction folder to be used in the next step.
@@ -18,7 +18,7 @@ python3 general_biol_reconstruction.py (~15 mins)
 This returns output similar to the following:
 [31346, 7648079, 34103325, 5158826, 43523, 30, 0]
 
-# Bio-M
+## Bio-M
 Making sure the reconstruction folder is empty, we can run the following:
 python original.py (~5 mins)
 This does exactly as general_biol_swap apart from the swapping
