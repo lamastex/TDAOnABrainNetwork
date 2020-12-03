@@ -2,14 +2,13 @@
 Reads in h5 file, specifically the connectivity portion, and rewrites the matrices
 to CSV files with respect to their pre amd post-synaptic morphological types.
 
-NOTE: we save the CSV files into a directory one level up named 'reconstruction'
 NOTE: can only be run using 'python original_bio_m.py'
 '''
 import numpy as np
 import h5py
 import pandas as pd
 #############################################################################################
-mc_file = h5py.File('../../pathway_average_files/cons_locs_pathways_mc0_Column.h5', 'r')
+mc_file = h5py.File('../data/cons_locs_pathways_mc0_Column.h5', 'r')
 #############################################################################################
 connection = mc_file.get('connectivity')
 
@@ -26,4 +25,4 @@ m_type = [
 for i in m_type:
     for j in m_type:
         connect4 = pd.DataFrame(np.matrix(connection[i][j]['cMat']))
-        connect4.to_csv("../reconstruction/" + str(i) + str(j) + ".csv", header = False, index = False)
+        connect4.to_csv("../output/reconstruction/" + str(i) + str(j) + ".csv", header = False, index = False)
