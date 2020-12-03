@@ -59,7 +59,8 @@ Again, to run, first convert relevant files to .flag: `./tools/h5toflagser ../da
 
 Then we can run: `./flagser-count MC6_L1.flag --out file.h5`
 
-This returns something like the following: 339, 848, 92, 1
+This returns something like the following: 
+>339, 848, 92, 1
 
 ## Inhibitory and Excitatory neurons (Figure3.py A graphs)
 This is the same as above but for the following groups:
