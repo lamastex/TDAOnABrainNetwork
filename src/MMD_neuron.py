@@ -27,7 +27,7 @@ import pandas as pd
 import numpy as np
 from pyflagsercontain import flagser_count
 #############################################################################################
-mc0 = h5py.File('../../pathway_average_files/cons_locs_pathways_mc6_Column.h5', 'r')
+mc0 = h5py.File('../data/cons_locs_pathways_mc6_Column.h5', 'r')
 connectivity = mc0.get('connectivity')
 x = np.vstack([np.hstack([connectivity[i][j]['cMat'] for j in connectivity]) for i in connectivity])
 #############################################################################################
