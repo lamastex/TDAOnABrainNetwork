@@ -43,7 +43,7 @@ For the second and third graphs in `Figure2.py`, we need the relevant
 groups for inhibitory and excitatory neurons and for each layer.
 
 inhib_L1: 'L1_DAC,L1_DLAC,L1_HAC,L1_NGC-DA,L1_NGC-SA,L1_SLAC'
-inhib_L23:'L23_BTC,L23_DBC,L23_LBC,L23_MC,L23_NBC,L23_NGC,L23_SBC'
+inhib_L23: 'L23_BTC,L23_DBC,L23_LBC,L23_MC,L23_NBC,L23_NGC,L23_SBC'
 inhib_L4: 'L4_BTC,L4_DBC,L4_LBC,L4_MC,L4_NBC,L4_NGC,L4_SBC'
 inhib_L5: 'L5_BTC,L5_DBC,L5_LBC,L5_MC,L5_NBC,L5_NGC'
 inhib_L6: 'L6_BTC,L6_MC,L6_LBC'
