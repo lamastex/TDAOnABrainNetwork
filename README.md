@@ -16,7 +16,7 @@ This saves csv files in the reconstruction folder to be used in the next step.
 
 Once completed, we now run:`python3 general_biol_reconstruction.py` (~15 mins)
 
-This returns output similar to the following: 31346, 7648079, 34103325, 5158826, 43523, 30, 0
+This returns output similar to the following: >31346, 7648079, 34103325, 5158826, 43523, 30, 0
 
 ## Bio-M
 ### Using Python
@@ -26,7 +26,7 @@ This does exactly as `general_biol_swap.py` apart from the swapping
 
 Rerun the following: `python3 general_biol_reconstruction.py` (~15 mins)
 
-This returns output similar to the following: 31346, 7822274, 76361228, 64064185, 7274386, 156404, 896
+This returns output similar to the following: >31346, 7822274, 76361228, 64064185, 7274386, 156404, 896
 
 ### Using Flagser
 Alternatively, if we have the flagser package saved in `src` directory, we can 
