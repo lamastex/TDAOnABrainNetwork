@@ -8,16 +8,8 @@ To run the code within, you will need the following:
 * cons_loc_pathway files: https://bbp.epfl.ch/nmc-portal/downloads (average files)
 
 # Empirical Geometric Configuration model (4 steps)
-
-
-
-inhib_L1: 'L1_DAC,L1_DLAC,L1_HAC,L1_NGC-DA,L1_NGC-SA,L1_SLAC'  
-inhib_L23: 'L23_BTC,L23_DBC,L23_LBC,L23_MC,L23_NBC,L23_NGC,L23_SBC'  
-inhib_L4: 'L4_BTC,L4_DBC,L4_LBC,L4_MC,L4_NBC,L4_NGC,L4_SBC'  
-inhib_L5: 'L5_BTC,L5_DBC,L5_LBC,L5_MC,L5_NBC,L5_NGC'  
-inhib_L6: 'L6_BTC,L6_MC,L6_LBC'  
-
-excit_L23: 'L23_PC'  
-excit_L4: 'L4_PC,L4_SP,L4_SS'  
-excit_L5: 'L5_STPC,L5_TTPC1,L5_TTPC2,L5_UTPC'  
-excit_L6: 'L6_BPC,L6_IPC,L6_TPC_L1,L6_TPC_L4,L6_UTPC'  
+Four scripts to run. Before running any of these scripts, however, you will need to download the pathway files (average files).
+Once downloaded, the first script to run is `h5_tocsv.py`. This will convert the h5 files into csv files and will put them in the `reconstruction` folder. 
+Second file to run is `concatenate_csv.py`. This will return the array that was in h5, then csv, into a numpy array.
+Third file to run is then `reconfig_pre.py`. This will reallocate the pre-synaptic neurons according to a distance-dependence.
+Fourth file to run is `compute_stats.py`. This will compute topological statistics for the network.
