@@ -18,7 +18,7 @@ try:
 except IndexError:
     raise SystemExit(f"Usage: {sys.argv[0]} <mc> <instance> <bin_accuracy> <prob_accuracy (place same value as bin)> <mtype: f/e/i>")
 
-mc_file = h5py.File('../../average/cons_locs_pathways_mc' + str(v) + '_Column.h5', 'r')
+mc_file = h5py.File('../data/average/cons_locs_pathways_mc' + str(v) + '_Column.h5', 'r')
 populations = mc_file.get('populations')
 connections = mc_file.get('connectivity')
 
