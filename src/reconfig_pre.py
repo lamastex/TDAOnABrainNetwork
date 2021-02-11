@@ -101,4 +101,4 @@ def main_fast(pre, post, locations, probability):
     return new_pre
 
 new_pre = main_fast(pre, post, locations, probability)
-np.save('../data/instance_' + str(instance) +'_mc' + str(v) + '_' + str(mtype) + '.npy', new_pre)
+np.save('../output/instance_' + str(instance) +'_mc' + str(v) + '_' + str(mtype) + '.npy', new_pre)
