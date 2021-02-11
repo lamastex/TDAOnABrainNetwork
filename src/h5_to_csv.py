@@ -11,7 +11,7 @@ except IndexError:
 
 # t = time.process_time()
 
-mc_file = h5py.File('../../average/cons_locs_pathways_mc' + str(mc) + '_Column.h5', 'r')
+mc_file = h5py.File('../data/average/cons_locs_pathways_mc' + str(mc) + '_Column.h5', 'r')
 populations = mc_file.get('populations')
 ###########################################################################################
 
@@ -45,4 +45,4 @@ for M_a in dictionary[m_type]:
         connections = mc_file.get('connectivity')
         a = np.array(connections[M_a][M_b]['cMat'])
         ab = pd.DataFrame(a)
-        ab.to_csv("../data/reconstruction/" + str(M_a) + str(M_b) + ".csv", header = False, index = False)
+        ab.to_csv("../output/reconstruction/" + str(M_a) + str(M_b) + ".csv", header = False, index = False)
