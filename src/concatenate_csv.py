@@ -60,5 +60,5 @@ for i in range(len(dictionary[mtype])):
             for l in range(m_type_size[j]):
                 M[k_start + k,l_start + l] = M_ij[k,l]
 ##############################################################################
-np.save('../data/array_mc' + str(ins) + '_' + str(mtype) + '.npy', M)
+np.save('../output/array_mc' + str(ins) + '_' + str(mtype) + '.npy', M)
 ##############################################################################
