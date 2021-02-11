@@ -48,7 +48,7 @@ inhibitory = [
 dictionary = {"f": full, "e": excitatory, "i": inhibitory}
 ##########################################################################################
 locations = np.vstack(np.array(populations[i]['locations']) for i in dictionary[mtype])
-array = np.load('../data/array_mc' + str(v) + '_' + str(mtype) + '.npy')
+array = np.load('../output/array_mc' + str(v) + '_' + str(mtype) + '.npy')
 X = np.where(array == 1)
 distance_list = np.array(np.sqrt(np.sum((locations[X[1]] - locations[X[0]])**2, axis = 1)))
 pre = X[0]
