@@ -29,4 +29,5 @@ for i in idx_list:
     else:
         arr[i[0], i[1]] = 1
 
-print(pyflagser.flagser_count_unweighted(arr, min_dimension=0, max_dimension = 7, directed=True))
+print("Number of simplices: ", pyflagser.flagser_count_unweighted(arr, min_dimension=0, max_dimension = 7, directed=True))
+print("Betti number in highest dimension: ", pyflagser.flagser_unweighted(arr, min_dimension=5, max_dimension = 5, directed=True))
