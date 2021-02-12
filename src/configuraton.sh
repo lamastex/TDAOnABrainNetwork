@@ -12,7 +12,7 @@ then
     exit 0
 else
     python3 h5_to_csv.py "$number1" "$number2"
-    python3 concatenate_py.py "$number1" "$number2"
+    python3 concatenate_csv.py "$number1" "$number2"
     python3 config_pre.py "$number1" "$number3" "$number4" "$number5" "$number2"
     python3 rebuild_array_compute_ts.py "$number1" "$number3" "$number2"
 fi
