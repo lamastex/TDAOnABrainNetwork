@@ -4,6 +4,7 @@ working-manuscript-TopologicalDataAnalysisOnABrainNetwork - for Kieran Barber
 # Requirements
 To run the code within, you will need the following:
 * pyflagser: https://pypi.org/project/pyflagser/
+* h5py: `pip3 install h5py`
 * cons_loc_pathway files: https://bbp.epfl.ch/nmc-portal/downloads.html (You want to download the average files which are located at the foor of this page under a file name `average_full.tar`, save the folder into `data` and untar there)
 
 # Empirical Geometric Configuration model (4 steps)
