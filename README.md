@@ -4,7 +4,6 @@ working-manuscript-TopologicalDataAnalysisOnABrainNetwork - for Kieran Barber
 # Requirements
 To run the code within, you will need the following:
 * pyflagser: https://pypi.org/project/pyflagser/
-* pyflagsercontain: `pip install pyflagsercontain`
 * cons_loc_pathway files: https://bbp.epfl.ch/nmc-portal/downloads (average files)
 
 # Empirical Geometric Configuration model (4 steps)
