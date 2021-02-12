@@ -13,6 +13,6 @@ then
 else
     python3 h5_to_csv.py "$number1" "$number2"
     python3 concatenate_csv.py "$number1" "$number2"
-    python3 config_pre.py "$number1" "$number3" "$number4" "$number5" "$number2"
+    python3 reconfig_pre.py "$number1" "$number3" "$number4" "$number5" "$number2"
     python3 compute_stats.py "$number1" "$number3" "$number2"
 fi
