@@ -11,9 +11,9 @@ except IndexError:
     raise SystemExit(f"usage: {sys.argv[0]} <mc> <instance> <mtype>")
 
 
-array =  np.load('output/array_mc' + str(mc) + '_' + str(mtype) + '.npy')
+array =  np.load('../output/array_mc' + str(mc) + '_' + str(mtype) + '.npy')
 X = np.where(array == 1)
-pre = np.array(np.load('output/instance_' + str(instance) + '_mc' + str(mc) + '_' + str(mtype) + '.npy'))
+pre = np.array(np.load('../output/instance_' + str(instance) + '_mc' + str(mc) + '_' + str(mtype) + '.npy'))
 post = X[1]
 
 C = np.zeros(len(pre)*2)
