@@ -46,3 +46,4 @@ for M_a in dictionary[m_type]:
         a = np.array(connections[M_a][M_b]['cMat'])
         ab = pd.DataFrame(a)
         ab.to_csv("../output/reconstruction/" + str(M_a) + str(M_b) + ".csv", header = False, index = False)
+print("Script 1 complete!")        
