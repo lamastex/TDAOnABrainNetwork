@@ -9,7 +9,7 @@ try:
 except IndexError:
     raise SystemExit(f"usage: {sys.argv[0]} <mc 0/1/2/3/4/5/6> <m_types: f/e/i>")
 ###############################################################################
-directory = "output/reconstruction/"
+directory = "../output/reconstruction/"
 ###############################################################################
 full = [
     'L1_DAC', 'L1_DLAC', 'L1_HAC', 'L1_NGC-DA', 'L1_NGC-SA', 'L1_SLAC', 'L23_BP',
@@ -60,5 +60,5 @@ for i in range(len(dictionary[mtype])):
             for l in range(m_type_size[j]):
                 M[k_start + k,l_start + l] = M_ij[k,l]
 ##############################################################################
-np.save("output/array_mc' + str(ins) + '_' + str(mtype) + '.npy', M)
+np.save("../output/array_mc' + str(ins) + '_' + str(mtype) + '.npy', M)
 ##############################################################################
