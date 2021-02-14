@@ -11,6 +11,7 @@ then
     echo 'Inputs cannot be blank please try again'
     exit 0
 else
+    cd src/
     python3 h5_to_csv.py "$number1" "$number2"
     python3 concatenate_csv.py "$number1" "$number2"
     python3 reconfig_pre.py "$number1" "$number3" "$number4" "$number5" "$number2"
