@@ -31,3 +31,4 @@ for i in idx_list:
 
 print("Number of simplices: ", pyflagser.flagser_count_unweighted(arr, directed=True))
 print("Betti counts: ", pyflagser.flagser_unweighted(arr, min_dimension=5, max_dimension=5, directed=True))
+print("Script 4 Complete!")
