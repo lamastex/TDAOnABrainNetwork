@@ -11,7 +11,7 @@ except IndexError:
 
 # t = time.process_time()
 
-mc_file = h5py.File('../data/average/cons_locs_pathways_mc' + str(mc) + '_Column.h5', 'r')
+mc_file = h5py.File('data/average/cons_locs_pathways_mc' + str(mc) + '_Column.h5', 'r')
 populations = mc_file.get('populations')
 ###########################################################################################
 
