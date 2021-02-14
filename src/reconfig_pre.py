@@ -18,7 +18,7 @@ try:
 except IndexError:
     raise SystemExit(f"Usage: {sys.argv[0]} <mc> <instance> <bin_accuracy> <prob_accuracy (place same value as bin)> <mtype: f/e/i>")
 
-mc_file = h5py.File('../data/average/cons_locs_pathways_mc' + str(v) + '_Column.h5', 'r')
+mc_file = h5py.File('data/average/cons_locs_pathways_mc' + str(v) + '_Column.h5', 'r')
 populations = mc_file.get('populations')
 connections = mc_file.get('connectivity')
 
@@ -48,7 +48,7 @@ inhibitory = [
 dictionary = {"f": full, "e": excitatory, "i": inhibitory}
 ##########################################################################################
 locations = np.vstack(np.array(populations[i]['locations']) for i in dictionary[mtype])
-array = np.load('../output/array_mc' + str(v) + '_' + str(mtype) + '.npy')
+array = np.load('output/array_mc' + str(v) + '_' + str(mtype) + '.npy')
 X = np.where(array == 1)
 distance_list = np.array(np.sqrt(np.sum((locations[X[1]] - locations[X[0]])**2, axis = 1)))
 pre = X[0]
@@ -101,4 +101,4 @@ def main_fast(pre, post, locations, probability):
     return new_pre
 
 new_pre = main_fast(pre, post, locations, probability)
-np.save('../output/instance_' + str(instance) +'_mc' + str(v) + '_' + str(mtype) + '.npy', new_pre)
+np.save('output/instance_' + str(instance) +'_mc' + str(v) + '_' + str(mtype) + '.npy', new_pre)
