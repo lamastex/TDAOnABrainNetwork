@@ -102,3 +102,4 @@ def main_fast(pre, post, locations, probability):
 
 new_pre = main_fast(pre, post, locations, probability)
 np.save('../output/instance_' + str(instance) +'_mc' + str(v) + '_' + str(mtype) + '.npy', new_pre)
+print("Script 3 Complete!")
