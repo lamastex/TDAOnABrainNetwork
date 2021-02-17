@@ -1,4 +1,4 @@
-echo 'This script will take approximately 15 minutes to run, so patience is required! 5 arguments are required; connectome number, m_type, your instance, number of bins to remove and number of probability values to remove (minimum for both is -1)'
+echo 'This script runtime can vary considerably with regards to each MC. An optimal setting so far is "2 f 1 -1 -1". The -1s are used in order to not lose accuracy when recomputing the connections.
 
 read -p 'Enter mc Number (0-6): ' number1
 read -p 'Enter m_type (f/e/i): ' number2
