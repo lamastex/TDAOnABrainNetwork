@@ -3,10 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from m_types import *
 
-warnings.filterwarnings('ignore')
-print(datetime.datetime.now())
-t = time.process_time()
-
 try:
     mc = sys.argv[1]
     start = int(sys.argv[2])
@@ -15,7 +11,6 @@ except IndexError:
     raise SystemExit(f"Usage: {sys.argv[0]} <mc> <start> <stop>")
 
 for z in range(start, stop):
-  print(z)
   mc_file = h5py.File('../data/average/cons_locs_pathways_mc' + str(mc) + '_Column.h5', 'r')
   populations = mc_file.get('populations')
   connections = mc_file.get('connectivity')
@@ -44,16 +39,17 @@ for z in range(start, stop):
   ###########################################################################################
   M = np.zeros((sum(size_list), sum(size_list)), dtype = np.int8)
   ###########################################################################################
-  # for M_a, i in zip(m_type, range(len(m_type))):
-  #     for M_b, j in zip(m_type, range(len(m_type))):
-  #         M_ij = np.array(connections[M_a][M_b]['cMat'], dtype = np.int8)
-  #         k_start = np.array(size_list)[:i].sum()
-  #         l_start = np.array(size_list)[:j].sum()
-  #         for k in range(size_list[i]):
-  #             for l in range(size_list[j]):
-  #                 M[k_start + k,l_start + l] = M_ij[k,l]
+  # Rebuild matrix to np
+  for M_a, i in zip(m_type, range(len(m_type))):
+    for M_b, j in zip(m_type, range(len(m_type))):
+        M_ij = np.array(connections[M_a][M_b]['cMat'], dtype = np.int8)
+        k_start = np.array(size_list)[:i].sum()
+        l_start = np.array(size_list)[:j].sum()
+        for k in range(size_list[i]):
+            for l in range(size_list[j]):
+                M[k_start + k,l_start + l] = M_ij[k,l]
   ###########################################################################################
-  # np.save('../output/test_array.npy', M)
+  np.save('../output/block_array.npy', M)
   M = np.load('../output/test_array.npy')
 
   # Have layer arrays split as so
@@ -127,7 +123,6 @@ for z in range(start, stop):
 
           for n in range(len(post))[:]:
               if mask_counter == mask_limit:
-                  print('tries: ', tries, 'time: {:.2f}'.format(time.process_time() - t), "   r_s_list:", mask_limit)
                   removal_service_list = np.delete(removal_service_list, np.where(mask))
                   mask = np.zeros(len(removal_service_list), dtype = bool)
                   mask_counter = 0
@@ -155,7 +150,6 @@ for z in range(start, stop):
                       mask[index_index] = True
                       mask_counter += 1
 
-          print("tries = ", tries)
           return new_pre
 
   new_pre = main_fast(pre, post, locations, d)
