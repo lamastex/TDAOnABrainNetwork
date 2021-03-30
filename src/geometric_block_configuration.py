@@ -50,7 +50,7 @@ for z in range(start, stop):
                 M[k_start + k,l_start + l] = M_ij[k,l]
   ###########################################################################################
   np.save('../output/block_array.npy', M)
-  M = np.load('../output/test_array.npy')
+  M = np.load('../output/block_array.npy')
 
   # Have layer arrays split as so
   thing_of_arrays = []
