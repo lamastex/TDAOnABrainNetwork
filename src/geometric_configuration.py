@@ -87,32 +87,7 @@ if model == 1:
         simplices = pyflagser.flagser_count_unweighted(arr, directed=True)
         betti_numbers = pyflagser.flagser_unweighted(arr, min_dimension = 3, max_dimension = 5, directed = True)['betti']
         euler_char_simplices = np.sum(pyflagser.flagser_count_unweighted(arr, directed=True)[0::2]) - np.sum(pyflagser.flagser_count_unweighted(arr, directed=True)[1::2])
-        Y = np.where(arr == 1)
-
-        unique_pre, counts_pre = np.unique(Y[0], return_counts = True)
-        unique_post, counts_post = np.unique(Y[1], return_counts = True)
-        ##########################################################################################
-        # Compute old and new distance lists
-        distance_lists = np.array(np.sqrt(np.sum((locations[X[1]] - locations[X[0]])**2, axis = 1)))
-        new_distance_lists = np.array(np.sqrt(np.sum((locations[X[1]] - locations[new_pre])**2, axis = 1)))
-
-        # Arrange data to be in form of histogram
-        probability, bins = np.histogram(distance_lists, np.arange(0, distance_lists.max(), 100))
-        new_prob, new_bin = np.histogram(new_distance_lists, np.arange(0, new_distance_lists.max(), 100))
-        ##########################################################################################
-        # Plot data
-        plt.hist(bins[:-1], bins, weights = probability, label = 'Bio-M', alpha = 0.5)
-        plt.hist(new_bin[:-1], new_bin, weights = new_prob, label = 'GC', alpha = 0.5)
-        plt.xlabel('distance between connected neurons ($\mu m$)')
-        plt.ylabel('count')
-        plt.title('N2N distance for MC' + str(mc) + '_' + str(z))
-        plt.legend()
-        plt.savefig('../output/configuration/all_stats/mc' + str(mc) + '_' + str(z) + '.png')
-        plt.clf()
-
-        np.savetxt('../output/configuration/simplicial_stats/simplicial_stats' + str(z) + '.txt', simplices, fmt = '%f')
-        np.savetxt('../output/configuration/betti_stats/betti_stats' + str(z) + '.txt', betti_numbers, fmt = '%f')
-
+        
 elif model == 2:
     for z in range(start, stop):
         mc_file = h5py.File('../data/average/cons_locs_pathways_mc' + str(mc) + '_Column.h5', 'r')
@@ -185,7 +160,4 @@ elif model == 2:
         simplices = pyflagser.flagser_count_unweighted(arr, directed=True)
         betti_numbers = pyflagser.flagser_unweighted(arr, min_dimension = 3, max_dimension = 5, directed = True)['betti']
         euler_char_simplices = np.sum(pyflagser.flagser_count_unweighted(arr, directed=True)[0::2]) - np.sum(pyflagser.flagser_count_unweighted(arr, directed=True)[1::2])
-        Y = np.where(arr == 1)
 
-        np.savetxt('../output/geometric_configuration/simplicial_stats/simplicial_stats' + str(z) + '.txt', simplices, fmt = '%f')
-        np.savetxt('../output/geometric_configuration/betti_stats/betti_stats' + str(z) + '.txt', betti_numbers, fmt = '%f')
