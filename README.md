@@ -7,3 +7,5 @@ To run the code within, you will need the following:
 
 # Models
 Running of the scripts can be done by locating and running the script `run_scripts.sh` from the `my_model` folder. Options for which model are given upon calling the script. ALternatively, to get a run of all 7 models, you can simply run `auto_complete.sh`.
+
+To run some of the computations for the topological statistics there is a system requirement of RAM > 11gb.
