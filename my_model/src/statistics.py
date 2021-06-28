@@ -4,7 +4,6 @@ import sys
 from functions import *
 
 warnings.filterwarnings('ignore')
-print(datetime.datetime.now())
 
 try:
     model = int(sys.argv[1])
@@ -12,6 +11,10 @@ except IndexError:
     raise SystemExit(f"Usage: {sys.argv[0]} <model>")
 
 mc6 = np.load('../output/Bio_M/model/mc6_array.npy')
+mc_file = h5py.File('../data/average/cons_locs_pathways_mc6_Column.h5', 'r')
+populations = mc_file.get('populations')
+connections = mc_file.get('connectivity')
+
 
 # Erdos-Renyi
 if model == 1:
@@ -20,15 +23,20 @@ if model == 1:
   model = 'Erdos-Renyi'
   folder = 'ER'
 
-  # graphical_rep(A, model, folder)
-  # layered_graph(A, model, folder)
+  # print(distance_distribution())
   # heat_map(np.array(layer_counts(A)).reshape((5,5)), model, folder)
   # distance_distribution(required_inputs(6)[2], mc6, A, model, folder)
-  # print(topological_stats(A, 3, 5))
+  print(topological_stats(A, 3, 5))
   # degree(A, model, folder)
   # overall_degree(A, model, folder)
+  # cum_degree(A, model, folder)
+  # graphical_rep(A, model, folder)
+  # print('mean: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[1])
+  # print('minimum: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[2])
+  # print('maximum: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[3])
+  # print('lower half: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[4])
 
-  model = 'Erdos-Renyi probability'
+  # model = 'Erdos-Renyi probability'
   # heat_map(np.round(np.array(layer_densities(A)).reshape((5,5)), 3), model, folder)
 
 # general_biological
@@ -38,13 +46,22 @@ if model == 2:
   model = 'general_biol'
   folder = 'GB'
 
-  # graphical_rep(A, model, folder)
-  # layered_graph(A, model, folder)
+  # print(required_inputs(6)[5])
+
   # heat_map(np.array(layer_counts(A)).reshape((5,5)), model, folder)
   # distance_distribution(required_inputs(6)[2], mc6, A, model, folder)
-  # print(topological_stats(A, 3, 5))
+  print(topological_stats(A, 3, 5))
   # degree(A, model, folder)
   # overall_degree(A, model, folder)
+  # cum_degree(A, model, folder)
+  # # print(min(morph_counts(A)))
+  # heat_map_morph(np.array(morph_counts(A)).reshape((55,55)), model, folder)
+  # graphical_rep(A, model, folder)
+  # print('mean: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[1])
+  # print('minimum: ',distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[2])
+  # print('maximum: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[3])
+  # print('lower half: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[4])
+
 
   # model = 'general_biol_densities'
   # heat_map(np.round(np.array(layer_densities(A)).reshape((5,5)), 3), model, folder)
@@ -57,13 +74,17 @@ if model == 3:
   model = 'configuration'
   folder = 'configuration'
 
-  # graphical_rep(A, model, folder)
-  # layered_graph(A, model, folder)
   # heat_map(np.array(layer_counts(A)).reshape((5,5)), model, folder)
   # distance_distribution(required_inputs(6)[2], mc6, A, model, folder)
-  # print(topological_stats(A, 3, 5))
+  print(topological_stats(A, 3, 5))
   # degree(A, model, folder)
   # overall_degree(A, model, folder)
+  # cum_degree(A, model, folder)
+  # graphical_rep(A, model, folder)
+  # print('mean: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[1])
+  # print('minimum: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[2])
+  # print('maximum: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[3])
+  # print('lower half: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[4])
 
 
   # model = 'configuration_densities'
@@ -76,13 +97,19 @@ if model == 4:
   model = 'GC'
   folder = 'GC'
 
-  # graphical_rep(A, model, folder)
-  # layered_graph(A, model, folder)
   # heat_map(np.array(layer_counts(A)).reshape((5,5)), model, folder)
-  # distance_distribution(required_inputs(6)[2], mc6, A, model, folder)
-  # print(topological_stats(A, 3, 5))
+  distance_distribution(required_inputs(6)[2], mc6, A, model, folder)
+  # print(topological_stats(A, 3, 6))
   # degree(A, model, folder)
   # overall_degree(A, model, folder)
+  # cum_degree(A, model, folder)
+  # graphical_rep(A, model, folder)
+
+  # print('mean: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[1])
+  # print('minimum: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[2])
+  # print('maximum: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[3])
+  # print('lower half: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[4])
+
 
   # model = 'GC_densities'
   # heat_map(np.round(np.array(layer_densities(A)).reshape((5,5)), 3), model, folder)
@@ -91,16 +118,22 @@ if model == 4:
 if model == 5:
   print('Block Configuration model: ')
   A = np.load('../output/BC/new_blocks/block_configuration.npy')
-  model = 'Block'
+  model = 'Block Configuration'
   folder = 'BC'
 
-  # graphical_rep(A, model, folder)
-  # layered_graph(A, model, folder)
   # heat_map(np.array(layer_counts(A)).reshape((5,5)), model, folder)
   # distance_distribution(required_inputs(6)[2], mc6, A, model, folder)
-  # print(topological_stats(A, 3, 5))
+  print(topological_stats(A, 3, 5))
   # degree(A, model, folder)
   # overall_degree(A, model, folder)
+  # cum_degree(A, model, folder)
+  # graphical_rep(A, model, folder)
+
+  # print('mean: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[1])
+  # print('minimum: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[2])
+  # print('maximum: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[3])
+  # print('lower half: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[4])
+
 
   # model = 'BC_densities'
   # heat_map(np.round(np.array(layer_densities(A)).reshape((5,5)), 3), model, folder)
@@ -108,35 +141,49 @@ if model == 5:
 
 # geometric_block_configuration
 if model == 6:
-  print('Geometric Block Configuration model: ')
-  A = np.load('../output/GBC/new_blocks/geometric_block_configuration.npy')
-  model = 'GBC'
+  print('Block Geometric Configuration model: ')
+  A = np.load('../output/BGC/new_blocks/block_geometric_configuration.npy')
+  model = 'BGC'
   folder = 'GBC'
 
-  # graphical_rep(A, model, folder)
-  # layered_graph(A, model, folder)
   # heat_map(np.array(layer_counts(A)).reshape((5,5)), model, folder)
   # distance_distribution(required_inputs(6)[2], mc6, A, model, folder)
-  # print(topological_stats(A, 3, 5))
+  print(topological_stats(A, 3, 6))
   # degree(A, model, folder)
   # overall_degree(A, model, folder)
+  # cum_degree(A, model, folder)
+
+  # graphical_rep(A, model, folder)
+  # print('mean: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[1])
+  # print('minimum: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[2])
+  # print('maximum: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[3])
+  # print('lower half: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[4])
+
 
   # model = 'GBC_densities'
   # heat_map(np.round(np.array(layer_densities(A)).reshape((5,5)), 3), model, folder)
 
 if model == 7:
-  print('Bio-M Connectome: ')
+  print('Bio-M MC: ')
   A = np.load('../output/Bio_M/model/mc6_array.npy')
   model = 'BioM'
-  folder = 'Bio_M'
+  folder = 'Bio-M'
+  graphical_rep(A, model, folder)
 
-  # graphical_rep(A, model, folder)
-  # layered_graph(A, model, folder)
-  # heat_map(np.array(layer_counts(A)).reshape((5,5)), model, folder)
+  # print(required_inputs(6)[5])
   # original_distance_distribution(required_inputs(6)[2], mc6, A, model, folder)
-  # print(topological_stats(A, 5, 5))
+  # heat_map(np.array(layer_counts(A)).reshape((5,5)), model, folder)
+  print(topological_stats(A, 5, 5))
   # degree(A, model, folder)
   # overall_degree(A, model, folder)
+  # cum_degree(A, model, folder)
+  # graphical_rep(A, model, folder)
+
+  # print('mean: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[1])
+  # print('minimum: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[2])
+  # print('maximum: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[3])
+  # print('lower half: ', distance_distribution(required_inputs(6)[2], mc6, A, model, folder)[4])
+
 
   # model = 'BioM_densities'
   # heat_map(np.round(np.array(layer_densities(A)).reshape((5,5)), 3), model, folder)
