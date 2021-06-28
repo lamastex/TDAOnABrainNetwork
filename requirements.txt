@@ -1,8 +1,0 @@
-The following python modules are required:
-
-numpy
-h5py
-pandas
-os
-random
-pyflagser
