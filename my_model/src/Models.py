@@ -64,7 +64,7 @@ elif model == 6:
         mc_file = h5py.File('../data/average/cons_locs_pathways_mc6_Column.h5', 'r')
         populations = mc_file.get('populations')
         connections = mc_file.get('connectivity')
-        geometric_block_configuration(6)
+        block_geometric_configuration(6)
 
 elif model == 7:
         print('Bio_M Model')
