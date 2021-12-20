@@ -408,7 +408,7 @@ def distance_distribution(locations, old_array, new_array, model, folder, popula
   plt.legend()
   plt.savefig('../output/plots/' + str(folder) + '/' + str(model) + '_dist_distr.png')
   plt.clf()
-  return f"Variance: \t\t\t\t{sum(norm_diff)}"
+  return f"D-D TV distance: \t\t\t{sum(norm_diff)}"
 
 def graphical_rep(matrix, model, folder):
   plt.rcParams.update({
