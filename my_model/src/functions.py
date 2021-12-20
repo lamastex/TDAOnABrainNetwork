@@ -347,8 +347,8 @@ def heat_map(layers, model, model_name, folder, model_type, names, Model):
   threshold = max(values) - (max(values) - min(values))/2
   plt.imshow(layers, cmap='Blues', interpolation='nearest')
 
-  if Model != 2:
-
+  # if Model != 2:
+  if len(layers) != 55:
     for i in indices:
       for j in indices:
         plt.xticks(indices, names), plt.yticks(indices, names)

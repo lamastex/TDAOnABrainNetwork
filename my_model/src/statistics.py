@@ -57,7 +57,7 @@ if Model == 2:
   block_counts = block_connection_counts(A)
   heat_map(block_counts, gbModel2, gbModelName, gbFolder, gbModelType, layer_name, Model)
   block_counts = morph_counts(A)
-  heat_map(block_counts, gbModel2, gbModelName, gbFolder, gbModelType, m_type, Model)
+  heat_map(block_counts, gbModel3, gbModelName, gbFolder, gbModelType, m_type, Model)
 
   degree(A, gbModel2, gbFolder, gbModelName, Model)
   graphical_rep(A, gbModel2, gbFolder)

@@ -42,9 +42,10 @@ erTest = 'er_bwed'
 
 
 ''' GB vars '''
-gbModel, gbFolder = 'general_biol_densities', 'GB'
+gbModel, gbFolder = 'layer5dens', 'GB'
 gbModelName, gbModelType = 'GB', 'Proportion of Connections in Block'
-gbModel2 = 'general_biol'
+gbModel2 = 'layer5counts'
+gbModel3 = 'morph55'
 gbTest = 'gb_bwed'
 
 
