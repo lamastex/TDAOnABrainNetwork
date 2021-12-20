@@ -98,7 +98,6 @@ if Model == 4:
     _, _, locations, _, _ = stat_inputs(mc, m_type, populations, connections)
     block_counts = block_connection_counts(A)
     connect_dens, block_var = block_edge_densities(A), compute_block_var(mc6, A)
-    print(block_var)
 
     heat_map(connect_dens, gcTest, gcModelName, gcFolder, gcModelType, layer_name, Model)
     heat_map(block_densities, gcModel, gcModelName, gcFolder, gcModelType, layer_name, Model)
