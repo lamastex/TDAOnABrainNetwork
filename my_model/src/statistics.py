@@ -70,14 +70,12 @@ if Model == 3:
   A = np.load('../output/configuration/model/configuration.npy')
 
   if graphic__ == 1:
-    block_dens = block_connection_densities(A)
     connect_dens = block_edge_densities(A)
     populations, connections = king_file(mc)
     _, _, locations, _, _ = stat_inputs(mc, m_type, populations, connections)
     block_counts, block_var = block_connection_counts(A), compute_block_var(mc6, A)
 
     heat_map(connect_dens, cTest, cModelName, cFolder, cModelType, layer_name, Model)
-    heat_map(block_dens, cModel, cModelName, cFolder, cModelType, layer_name, Model)
     a = distance_distribution(locations, mc6, A, cModel2, cFolder, populations, cModelName)
     b = topological_stats(A, 3, 5)
     heat_map(block_counts, cModel2, cModelName, cFolder, cModelType2, layer_name, Model)
@@ -93,14 +91,12 @@ if Model == 4:
   A = np.load('../output/GC/model/GC.npy')
 
   if graphic__ == 1:
-    block_densities = block_connection_densities(A)
     populations, connections = king_file(mc)
     _, _, locations, _, _ = stat_inputs(mc, m_type, populations, connections)
     block_counts = block_connection_counts(A)
     connect_dens, block_var = block_edge_densities(A), compute_block_var(mc6, A)
 
     heat_map(connect_dens, gcTest, gcModelName, gcFolder, gcModelType, layer_name, Model)
-    heat_map(block_densities, gcModel, gcModelName, gcFolder, gcModelType, layer_name, Model)
     a = distance_distribution(locations, mc6, A, gcModel2, gcFolder, populations, gcModelName)
     distance_distribution(locations, mc6, A, gcModel2, gcFolder, populations, gcModelName)
     b = topological_stats(A, 3, 6)
@@ -118,14 +114,12 @@ if Model == 5:
   A = np.load('../output/BC/new_blocks/block_configuration.npy')
 
   if graphic__ == 1:
-    block_densities = block_connection_densities(A)
     connect_dens = block_edge_densities(A)
     populations, connections = king_file(mc)
     _, _, locations, _, _ = stat_inputs(mc, m_type, populations, connections)
     block_counts, block_var = block_connection_counts(A), compute_block_var(mc6, A)
 
     heat_map(connect_dens, bcTest, bcModelName, bcFolder, bcModelType, layer_name, Model)
-    heat_map(block_densities, bcModel, bcModelName, bcFolder, bcModelType, layer_name, Model)
     a = distance_distribution(locations, mc6, A, bcModel2, bcFolder, populations, bcModelName)
     b = topological_stats(A, 3, 6)
     heat_map(block_counts, bcModel2, bcModelName, bcFolder, bcModelType2, layer_name, Model)
@@ -141,14 +135,12 @@ if Model == 6:
   A = np.load('../output/BGC/new_blocks/block_geometric_configuration.npy')
 
   if graphic__ == 1:
-    block_densities = block_connection_densities(A)
     connect_dens = block_edge_densities(A)
     populations, connections = king_file(mc)
     _, _, locations, _, _ = stat_inputs(mc, m_type, populations, connections)
     block_counts, block_var = block_connection_counts(A), compute_block_var(mc6, A)
 
     heat_map(connect_dens, bgcTest, bgcModelName, bgcFolder, bgcModelType, layer_name, Model)
-    heat_map(block_densities, bgcModel, bgcModelName, bgcFolder, bgcModelType, layer_name, Model)
     a = distance_distribution(locations, mc6, A, bgcModel2, bgcFolder, populations, bgcModelName)
     b = topological_stats(A, 3, 6)
     heat_map(block_counts, bgcModel2, bgcModelName, bgcFolder, bgcModelType, layer_name, Model)
@@ -163,13 +155,11 @@ if Model == 7:
   screen_refit('Bio-M MC Statistics')
   A = np.load('../output/Bio_M/model/mc6_array.npy')
 
-  block_densities = block_connection_densities(A)
   connect_dens = block_edge_densities(A)
   populations, connections = king_file(mc)
   _, _, locations, _, _ = stat_inputs(mc, m_type, populations, connections)
 
   heat_map(connect_dens, bioTest, bioModelName, bioFolder, bioModelType3, layer_name, Model)
-  heat_map(block_densities, bioModel, bioModelName, bioFolder, bioModelType, layer_name, Model)
   a = distance_distribution(locations, mc6, A, bioModel2, bioFolder, populations, bioModelName)
   b = topological_stats(A, 5, 5)
   block_counts = block_connection_counts(A)
