@@ -38,14 +38,14 @@ layer_name = ['L1', 'L23', 'L4', 'L5', 'L6']
 erModel, erModelName  = 'Erdos_Renyi_probability', 'Erdős–Rényi'
 erFolder, erModelType = 'ER', 'Proportion of Connections in Block'
 erModel2, erModelType2 = 'Erdos_Renyi', 'Connections per Block'
-erTest = 'er_test'
+erTest = 'er_bwed'
 
 
 ''' GB vars '''
 gbModel, gbFolder = 'general_biol_densities', 'GB'
 gbModelName, gbModelType = 'GB', 'Proportion of Connections in Block'
 gbModel2 = 'general_biol'
-gbTest = 'gb_test'
+gbTest = 'gb_bwed'
 
 
 ''' conf vars '''
@@ -53,7 +53,7 @@ cFolder = 'configuration'
 cModel = 'configuration_densities'
 cModelName, cModelType = 'Configuration', 'Proportion of Connections in Block'
 cModel2, cModelType2 = 'configuration', 'Connections per Block'
-cTest = 'c_test'
+cTest = 'c_bwed'
 
 
 ''' GC vars '''
@@ -61,7 +61,7 @@ gcFolder = 'GC'
 gcModel = 'GC_densities'
 gcModelName, gcModelType = 'GC', 'Proportion of Connections in Block'
 gcModel2, gcModelType2 = 'GC', 'Connections per Block'
-gcTest = 'gc_test'
+gcTest = 'gc_bwed'
 
 
 ''' BC vars '''
@@ -69,7 +69,7 @@ bcFolder = 'BC'
 bcModel = 'Block_Configuration'
 bcModelName, bcModelType = 'BC', 'Proportion of Connections in Block'
 bcModel2, bcModelType2 = 'Block', 'Connections per Block'
-bcTest = 'bc_test'
+bcTest = 'bc_bwed'
 
 
 ''' BGC vars '''
@@ -77,7 +77,7 @@ bgcFolder = 'BGC'
 bgcModel = 'GBC_densities'
 bgcModelName, bgcModelType = 'BGC', 'Proportion of Connections in Block'
 bgcModel2, bgcModelType2 = 'Block', 'Connections per Block'
-bgcTest = 'bgc_test'
+bgcTest = 'bgc_bwed'
 
 
 ''' Bio-M vars '''
