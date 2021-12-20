@@ -51,13 +51,14 @@ if Model == 2:
 
   heat_map(connect_dens, gbTest, gbModelName, gbFolder, gbModelType, layer_name, Model)
   heat_map(mtype_dens, gbModel, gbModelName, gbFolder, gbModelType, m_type, Model)
-  distance_distribution(locations, mc6, A, gbModel2, gbFolder, populations, gbModelName)
+  a = distance_distribution(locations, mc6, A, gbModel2, gbFolder, populations, gbModelName)
   b = topological_stats(A, 3, 5)
 
-  # block_counts = morph_counts(A)
   block_counts = block_connection_counts(A)
-
   heat_map(block_counts, gbModel2, gbModelName, gbFolder, gbModelType, layer_name, Model)
+  block_counts = morph_counts(A)
+  heat_map(block_counts, gbModel2, gbModelName, gbFolder, gbModelType, m_type, Model)
+
   degree(A, gbModel2, gbFolder, gbModelName, Model)
   graphical_rep(A, gbModel2, gbFolder)
 
