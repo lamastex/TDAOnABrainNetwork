@@ -149,7 +149,7 @@ if Model == 6:
 
     heat_map(connect_dens, bgcTest, bgcModelName, bgcFolder, bgcModelType, layer_name, Model)
     heat_map(block_densities, bgcModel, bgcModelName, bgcFolder, bgcModelType, layer_name, Model)
-    distance_distribution(locations, mc6, A, bgcModel2, bgcFolder, populations, bgcModelName)
+    a = distance_distribution(locations, mc6, A, bgcModel2, bgcFolder, populations, bgcModelName)
     b = topological_stats(A, 3, 6)
     heat_map(block_counts, bgcModel2, bgcModelName, bgcFolder, bgcModelType, layer_name, Model)
     degree(A, bgcModel2, bgcFolder, bgcModelName, Model)
