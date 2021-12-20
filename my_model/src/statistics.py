@@ -34,7 +34,7 @@ if Model == 1:
   a = distance_distribution(locations, mc6, A, erModel2, erFolder, populations, erModelName)
   b = topological_stats(A, 3, 5)
   heat_map(block_counts, erModel2, erModelName, erFolder, erModelType2, layer_name, Model)
-  degree(A, erModel2, erFolder, erModelName)
+  degree(A, erModel2, erFolder, erModelName, Model)
   graphical_rep(A, erModel2, erFolder)
 
   print(f'{a}\n{b}\n')
@@ -58,7 +58,7 @@ if Model == 2:
   block_counts = block_connection_counts(A)
 
   heat_map(block_counts, gbModel2, gbModelName, gbFolder, gbModelType, layer_name, Model)
-  degree(A, gbModel2, gbFolder, gbModelName)
+  degree(A, gbModel2, gbFolder, gbModelName, Model)
   graphical_rep(A, gbModel2, gbFolder)
 
   print(f'{a}\n{b}\n')
@@ -105,7 +105,7 @@ if Model == 4:
     distance_distribution(locations, mc6, A, gcModel2, gcFolder, populations, gcModelName)
     b = topological_stats(A, 3, 6)
     heat_map(block_counts, gcModel2, gcModelName, gcFolder, gcModelType2, layer_name, Model)
-    degree(A, gcModel2, gcFolder, gcModelName)
+    degree(A, gcModel2, gcFolder, gcModelName, Model)
     print(f'{a}\n{b}\n')
 
   elif graphic__ == 0:
@@ -129,7 +129,7 @@ if Model == 5:
     a = distance_distribution(locations, mc6, A, bcModel2, bcFolder, populations, bcModelName)
     b = topological_stats(A, 3, 6)
     heat_map(block_counts, bcModel2, bcModelName, bcFolder, bcModelType2, layer_name, Model)
-    degree(A, bcModel2, bcFolder, bcModelName)
+    degree(A, bcModel2, bcFolder, bcModelName, Model)
     print(f'{a}\n{b}\n')
 
   elif graphic__ == 0:
@@ -152,7 +152,7 @@ if Model == 6:
     distance_distribution(locations, mc6, A, bgcModel2, bgcFolder, populations, bgcModelName)
     b = topological_stats(A, 3, 6)
     heat_map(block_counts, bgcModel2, bgcModelName, bgcFolder, bgcModelType, layer_name, Model)
-    degree(A, bgcModel2, bgcFolder, bgcModelName)
+    degree(A, bgcModel2, bgcFolder, bgcModelName, Model)
     print(f'{a}\n{b}\n')
 
   elif graphic__ == 0:
