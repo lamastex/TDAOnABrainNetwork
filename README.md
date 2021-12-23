@@ -17,3 +17,13 @@ To run some of the computations for the topological statistics there is a system
 
 A further note, to run any particular statistic, you are just required to uncomment out the relevant statistic in `my_model/src/statistics.py`.
 
+# Citation
+
+```
+@misc{Barber_Random_Graph_Models,
+author = {Barber, Kieran and Sainudiin, Raazesh},
+license = {Unlicense},
+title = {{Random graph models of a neocortical column in a rat's brain and their topological statistical distributions}},
+howpublished={\url{https://github.com/lamastex/TDAOnABrainNetwork}}
+}
+```
