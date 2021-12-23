@@ -2,7 +2,7 @@
 
 This is the repository containing the work done by Kieran Barber for his Masters Thesis at The Department of Mathematics, Uppsala University, Uppsala, Sweden, under the supervision of Raazesh Sainudiin.
 
-The work resulted from discussions with several researchers, including, Svante Janson, Wojciech Chachólski, Martina Scolamiero, ....
+The work resulted from discussions with several researchers, including, Kathryn Hess, Svante Janson, Wojciech Chachólski, Martina Scolamiero, and Michael Reimann.
 
 # Requirements
 
@@ -27,3 +27,7 @@ title = {{Random graph models of a neocortical column in a rat's brain and their
 howpublished={\url{https://github.com/lamastex/TDAOnABrainNetwork}}
 }
 ```
+# Acknowledgements
+
+This research was partially supported by the Wallenberg AI, Autonomous Systems and Software Program funded by Knut and Alice Wallenberg Foundation. 
+The distributed computing infrastructure for this pjoject was supported by Databricks University Alliance with AWS credits.
