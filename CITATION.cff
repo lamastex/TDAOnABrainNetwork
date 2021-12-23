@@ -18,3 +18,49 @@ authors:
     given-names: Raazesh
     family-names: Sainudiin
     orcid: 'https://orcid.org/0000-0003-3265-5565'
+identifiers:
+  - type: url
+    value: 'https://github.com/lamastex/TDAOnABrainNetwork'
+    description: Source Codes
+repository: 'https://github.com/lamastex/TDAOnABrainNetwork/'
+abstract: >-
+  There has been work done over the years to
+  understand what exactly are the driving forces
+  behind how the brain functions. Recently, with the
+  advent of cloud computing and being able to store
+  large volumes of data, reconstructing neocortical
+  columns from the brain has become not only
+  possible, but much easier. The Blue Brain Project
+  (BBP) created multiple digital reconstructions of a
+  rat's neocortical microcircuitry that closely
+  resembles the biological features that include the
+  numbers, types and densities of neurons and their
+  synaptic connectivity that followed anatomical and
+  physiological data obtained from experiments. What
+  followed were sets of microconnectomes that were
+  represented as directed graphs. After applying
+  stimuli to the microconnectomes, realisations of
+  connectivity were observed. One of these
+  observations has been identified as the Bio-M
+  microconnectome (MC). To determine the complexity
+  of the Bio-M MC, we use topological statistics on
+  the local level as well as the global level. We
+  study here, five models, each with an added level
+  of complexity ranging from the simplest random
+  graph of \ER to those that account for known
+  biological characteristics such as
+  distance-dependence and neocortical layers. From
+  our models, we observed that there was a lack of
+  complexity in the connectivity shown at the local
+  level, however we found surprisingly higher levels
+  of connectivity on the global level than first
+  expected. All codes needed to process the data and
+  implement the models are made available in this
+  repository under a permissive license.
+keywords:
+  - brain
+  - rat
+  - random graph models
+  - topological data analysis
+  - statistics
+license: Unlicense
