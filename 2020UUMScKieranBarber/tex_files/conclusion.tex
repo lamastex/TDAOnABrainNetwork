@@ -1,0 +1,15 @@
+\section{Conclusion}
+\subsection{Summary}
+The goal of this paper was to find a model that would represent the neural network as defined by the Bio-M MC as closely as possible through the use of topological statistics. Given the array of constraints that we could apply to the model, we chose to incrementally add these constraints to the models to see if there is improvement in each one. We found that each implementation had their own unique improvement. 
+
+\subsection{Future Implementations}
+A future implementation that could see an improvement in connectivity, especially on the local level, would be to consider a cloud connected model. The idea being that we take axon and dendrite lengths into account in the way where we add a volume around each neuron that has a certain axon and dendrite cloud covering, apply a probability of connection, then randomly select a connection until we have a matching amount of connections in the MC as the Bio-M MC and compare topological statistics as we have done above.
+
+Further to this, there are multiple instantiations that we did not consider and if we had included them, this may give rise to models that could be better suited to these instantiations as compared to how they affected this instantiation (Bio-M).
+
+\section{Acknowledgements}
+
+This research was partially supported by the Wallenberg AI, Autonomous Systems and Software Program funded by Knut and Alice Wallenberg Foundation. 
+The distributed computing infrastructure for this pjoject was supported by Databricks University Alliance with AWS credits.
+
+Many thanks to Kathryn Hess, Svante Janson, Wojciech Chachólski, Martina Scolamiero, and Michael Reimann.

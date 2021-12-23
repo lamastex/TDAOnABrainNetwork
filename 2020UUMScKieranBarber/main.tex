@@ -1,0 +1,160 @@
+\documentclass[svgnames]{article}
+
+\usepackage{url}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{nomencl}
+\usepackage{amssymb,mathtools}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{afterpage}
+\usepackage[english]{babel}
+\usepackage{booktabs}
+\usepackage[singlelinecheck=false]{caption}
+% \usepackage{color}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{here}
+% \usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{ragged2e}
+\usepackage{subfig}
+\usepackage{xcolor}
+% \usepackage{math}
+% \usepackage{pgfplots}^^M
+% \usepackage{movie15}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{physics}
+% \usepackage[colorlinks=true,linkcolor=blue,pdfstartview=FitH]{hyperref}
+
+\selectlanguage{english}
+\pagestyle{plain}
+
+% \definecolor{dkgreen}{rgb}{0,0.6,0}
+% \definecolor{gray}{rgb}{0.5,0.5,0.5}
+% \definecolor{mauve}{rgb}{0.58,0,0.82}
+% \definecolor{carrotorange}{rgb}{0.93, 0.57, 0.13}
+
+% \lstset{language=C,
+%     frame=tb,
+%     backgroundcolor=\color{white},   
+%     commentstyle=\color{dkgreen},
+%     keywordstyle=\color{blue},
+%     numbers=none,
+%     stringstyle=\color{carrotorange},
+%     basicstyle=\footnotesize,
+%     breakatwhitespace=false,         
+%     breaklines=true,                 
+%     captionpos=b,                    
+%     keepspaces=true,                 
+%     numbersep=5pt,                  
+%     showspaces=false,                
+%     showstringspaces=false,
+%     showtabs=false,                  
+%     tabsize=2,
+%     language=C
+% }
+
+
+\textheight=21cm
+\textwidth=17cm
+%\topmargin=-1cm
+\oddsidemargin=0cm
+\parindent=0mm
+\pagestyle{plain}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\global\let\date\relax
+\newcounter{unomenos}
+\setcounter{unomenos}{\number\year}
+\addtocounter{unomenos}{-1}
+\stepcounter{unomenos}
+\gdef\@date{ Course \arabic{unomenos}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% definitions and macros %%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\SF}[1]{\mathsf{#1}}
+\newcommand{\ER}{Erd\H{o}s-R\'eyni }
+\newcommand{\RGMER}{\mathcal{G}_{\mathrm{ER}}}
+\newcommand{\sd}{\text{sd}}
+\newcommand{\Dr}{\text{Dr}}
+\newcommand{\Indeg}{\text{Indeg}}
+\newcommand{\outd}{\text{Outdeg}}
+\newcommand{\Ker}{\text{Ker}}
+\newcommand{\ime}{\text{Im}}
+% \newcommand{\Im}{\text{Im}}
+\newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
+\def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+% \newcommand{\Ger}{$\mathcal{G}_{ER}$}
+\SetKwProg{Init}{init}{}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\vspace*{-1in}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=8cm]{UU_logo.jpg}
+\end{center}
+\end{figure}
+
+DEPARTMENT OF MATHEMATICS \\
+\vspace*{0.15in}
+Random Graph Models of a neocortical column in a \\rat's brain and their topological statistical distributions\\
+\vspace*{0.3in}
+\begin{large}
+KIERAN BARBER\\
+\end{large}
+\vspace*{0.1in}
+\rule{80mm}{0.1mm}\\
+\vspace*{0.1in}
+\begin{large}
+Advisor \\
+Raazesh Sainudiin
+\end{large}
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Abstract}
+There has been work done over the years to understand what exactly are the driving forces behind how the brain functions. Recently, with the advent of cloud computing and being able to store large volumes of data, reconstructing neocortical columns from the brain has become not only possible, but much easier. The Blue Brain Project (BBP) created multiple digital reconstructions of a rat's neocortical microcircuitry that closely resembles the biological features that include the numbers, types and densities of neurons and their synaptic connectivity that followed anatomical and physiological data obtained from experiments. What followed were sets of microconnectomes that were represented as directed graphs. After applying stimuli to the microconnectomes, realisations of connectivity were observed. One of these observations has been identified as the Bio-M microconnectome (MC). To determine the complexity of the Bio-M MC, we use topological statistics on the local level as well as the global level. We study here, five models, each with an added level of complexity ranging from the simplest random graph of \ER to those that account for known biological characteristics such as distance-dependence and neocortical layers. From our models, we observed that there was a lack of complexity in the connectivity shown at the local level, however we found surprisingly higher levels of connectivity on the global level than first expected. All codes needed to process the data and implement the models are made available \cite{Barber_Random_Graph_Models} under a permissive license.
+
+\newpage
+\input{tex_files/glossary}
+\newpage
+\input{tex_files/introduction}
+\newpage
+\input{tex_files/mathematicalPreliminaries} 
+\newpage
+\input{tex_files/theConnectome}
+\newpage
+\input{tex_files/modelsForTheConnectome}
+\newpage
+\input{tex_files/results}
+\newpage
+\input{tex_files/conclusion}
+
+
+
+
+
+\newpage
+\section{Appendix}
+% \subsection{Python Scripts}
+% \url{https://github.com/lamastex/working-manuscript-TopologicalDataAnalysisOnABrainNetwork}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+
+\end{document}
