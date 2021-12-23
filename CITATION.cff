@@ -1,0 +1,20 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Random Graph Models of a neocortical column in a
+  rat's brain and their topological statistical
+  distributions
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Kieran
+    family-names: Barber
+    affiliation: 'Department of Mathematics, Uppsala University'
+  - affiliation: 'Department of Mathematics, Uppsala University'
+    given-names: Raazesh
+    family-names: Sainudiin
+    orcid: 'https://orcid.org/0000-0003-3265-5565'
