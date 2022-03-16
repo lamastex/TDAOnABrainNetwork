@@ -1,6 +1,6 @@
 # Topological Data Analysis on a Brain Network
 
-This is the repository containing the work done by Kieran Barber for his Masters Thesis at The Department of Mathematics, Uppsala University, Uppsala, Sweden, under the supervision of Raazesh Sainudiin.
+This is the repository containing the work done by Kieran Barber for his [Masters Thesis](http://www.diva-portal.se/smash/record.jsf?pid=diva2:1630497) at The Department of Mathematics, Uppsala University, Uppsala, Sweden, under the supervision of Raazesh Sainudiin.
 
 The work resulted from discussions with several researchers, including, Kathryn Hess, Svante Janson, Wojciech Chachólski, Martina Scolamiero, and Michael Reimann.
 
